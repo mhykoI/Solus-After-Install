@@ -9,10 +9,10 @@ MANUEL SETUP
 Solus-After-Install
 Bash script I used after installing Solus Os.
 
-Color emoji upload
-Remove sudo reauthentication timeout
-System Check
-System Update & Upgrade
+-Color emoji upload
+-Remove sudo reauthentication timeout
+-System Check
+-System Update & Upgrade
 
 Remove Apps;
 - firefox
