@@ -1,3 +1,7 @@
+Solus-After-Install
+Bash script I used after installing Solus Os.
+
+
 MANUEL SETUP
 
 -  sudo eopkg install git
@@ -6,12 +10,14 @@ MANUEL SETUP
 -  chmod +x SolusAfterInstall.sh
 -  ./SolusAfterInstall.sh
 
-Solus-After-Install
-Bash script I used after installing Solus Os.
+-------------------------------------------------
 
 -Color emoji upload
--Remove sudo reauthentication timeout
+
+-Remove sudo reauthentication time
+
 -System Check
+
 -System Update & Upgrade
 
 Remove Apps;
