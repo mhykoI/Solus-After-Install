@@ -29,5 +29,4 @@ Cleaning
 
 Google Chrome Update
 
-Gsettings
-Disable services
+Gsettings and some unnecessary disable services
