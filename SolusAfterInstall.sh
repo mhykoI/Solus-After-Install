@@ -1,34 +1,27 @@
 #!/bin/bash
 
-##### remove sudo reauthentication timeout
+##### sudo zaman aşımı kaldırma
 sudo sed -i.bak -e '$a\' -e 'Defaults timestamp_timeout=-1' -e '/Defaults timestamp_timeout=.*/d' /etc/sudoers
 
 YESIL='\033[0;32m'
 MAVI='\033[0;34m'
 RENKSIZ='\033[0m'
-
-control () {
+#####################################################################################################################
     echo
         echo -e "${MAVI} .................. Paketler Kontrol Ediliyor ................. ${RENKSIZ}"
     echo
         sudo eopkg rebuild-db && sudo eopkg check -y
-}
-
-update () {
+#####################################################################################################################
     echo
         echo -e "${MAVI} .................. Güncelleme Başlatılıyor ................. ${RENKSIZ}"
     echo
         sudo eopkg update-repo && sudo eopkg upgrade && sudo flatpak update -y
-}
-
-remove () { 
+#####################################################################################################################
     echo
         echo -e "${MAVI} ..................... Uygulamalar Kaldırılıyor ..................... ${RENKSIZ}"
     echo
         sudo eopkg remove --purge firefox hexchat rhythmbox thunderbird libreoffice-common seahorse gparted onboard -y
-}
-
-fontinstall () {
+#####################################################################################################################
     echo
         echo -e "${MAVI} ..................... Renkli Emoji Fontu Yükleniyor ..................... ${RENKSIZ}"
     echo
@@ -41,23 +34,19 @@ fontinstall () {
         cd
     echo
         echo -e "${MAVI} ..................... Font Yükleme Tamamlandı ..................... ${RENKSIZ}"
-}
-
-install () { 
+#####################################################################################################################
     echo
         echo -e "${MAVI} ..................... Uygulamalar Yükleniyor ..................... ${RENKSIZ}"
     echo
         sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/network/web/browser/google-chrome-stable/pspec.xml && sudo eopkg it google-chrome-*.eopkg;sudo rm google-chrome-*.eopkg && sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/multimedia/music/spotify/pspec.xml && sudo eopkg it spotify*.eopkg;sudo rm spotify*.eopkg && sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/programming/sublime-text-3/pspec.xml && sudo eopkg it sublime*.eopkg;sudo rm sublime*.eopkg && sudo eopkg bi --ignore-safety https://raw.githubusercontent.com/getsolus/3rd-party/master/desktop/font/mscorefonts/pspec.xml && sudo eopkg it mscorefonts*.eopkg;sudo rm mscorefonts*.eopkg && sudo snap install authy && sudo eopkg it discord && sudo eopkg it plank -y
-}
-
-cleaning () {
+#####################################################################################################################
     echo
         echo -e "${MAVI} ..................... Temizleniyor ..................... ${RENKSIZ}"
     echo
         sudo eopkg rmo && sudo eopkg dc && sudo eopkg clean && sudo eopkg cp -y
     echo
         echo -e "${MAVI} ..................... Hepsi Bitti ..................... ${RENKSIZ}"
-}
+#####################################################################################################################
 
 options (){
     if [[ $answer == 'r' ]]
