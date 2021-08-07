@@ -1,10 +1,10 @@
 MANUEL SETUP
 
-sudo eopkg install git
-git clone https://github.com/mhykoI/Solus-After-Install.git
-cd Solus-After-Install
-chmod +x SolusAfterInstall.sh
-./SolusAfterInstall.sh
+-  sudo eopkg install git
+-  git clone https://github.com/mhykoI/Solus-After-Install.git
+-  cd Solus-After-Install
+-  chmod +x SolusAfterInstall.sh
+-  ./SolusAfterInstall.sh
 
 Solus-After-Install
 Bash script I used after installing Solus Os.
