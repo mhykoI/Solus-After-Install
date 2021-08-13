@@ -10,7 +10,7 @@ RENKSIZ='\033[0m'
     echo
         echo -e "${MAVI} .................. Paketler Kontrol Ediliyor ................. ${RENKSIZ}"
     echo
-        sudo eopkg rebuild-db && sudo eopkg check -y
+        sudo eopkg rebuild-db -y && sudo eopkg check -y
 #####################################################################################################################
     echo
         echo -e "${MAVI} .................. Güncelleme Başlatılıyor ................. ${RENKSIZ}"
@@ -79,9 +79,8 @@ CURRENT="$(google-chrome-stable --version | cut -d ' ' -f3)"
 #######################################
 
 echo ""
-echo "Chrome'un en son sürümünü kontrol ediliyor..."
+echo "Chrome'un en son sürümü kontrol ediliyor..."
 echo ""
-$NEW
 sleep 3
 
 echo "Sürümlerin karşılaştırılması..."
@@ -142,9 +141,9 @@ echo -e "${MAVI} ---------------------------------------------------- ${RENKSIZ}
 echo
 echo -e "${YESIL}
     Bundan Sonra Ne Yapacaksınız ?
-    ${RENKSIZ}Yeniden Başlatmak${YESIL}: için ${RENKSIZ}r${YESIL} yazın ve ${RENKSIZ}Enter${YESIL};
-    ${RENKSIZ}Bilgisayarı Kapatmak${YESIL}: için ${RENKSIZ}p${YESIL} yazın ve ${RENKSIZ}Enter${YESIL};
-    ${RENKSIZ}Paneli Kapatmak${YESIL}: için sadece ${RENKSIZ}Enter${YESIL};
+    ${RENKSIZ}Yeniden Başlatmak için${MAVI}:${YESIL} r ${RENKSIZ}
+    ${RENKSIZ}Bilgisayarı Kapatmak için${MAVI}:${YESIL} p ${RENKSIZ}
+    ${RENKSIZ}Paneli Kapatmak için${MAVI}:${YESIL } Enter ${RENKSIZ}
     ${RENKSIZ}"
 echo -e "${MAVI} ---------------------------------------------------- ${RENKSIZ}"
 read answer;
